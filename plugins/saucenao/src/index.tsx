@@ -77,7 +77,7 @@ export const onUnload = before("openLazy", ActionSheet, ([component, key]) => {
         <FormRow
           leading={SearchIcon}
           label={services[id].name}
-          onPress={() => openURL(services[id].url.replace("%s", url))}
+          onPress={() => openURL(services[id].url.replace("%s", encodeURIComponent(url)))}
         />
       ));
     });
